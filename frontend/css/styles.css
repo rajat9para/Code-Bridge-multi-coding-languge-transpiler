@@ -1,0 +1,638 @@
+/* CodeBridge - VS Code Style Theme */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header */
+.header {
+    background-color: #323233;
+    padding: 10px 20px;
+    border-bottom: 1px solid #3c3c3c;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header h1 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #569cd6;
+}
+
+.header .subtitle {
+    color: #808080;
+    font-size: 13px;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    min-height: 0;
+}
+
+/* Left Panel */
+.left-panel {
+    width: 60%;
+    min-width: 320px;
+    flex: 0 0 60%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+/* Controls Bar */
+.controls-bar {
+    background-color: #252526;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #3c3c3c;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.control-group label {
+    font-size: 13px;
+    color: #cccccc;
+}
+
+.control-group select {
+    padding: 5px 10px;
+    background-color: #3c3c3c;
+    border: 1px solid #3c3c3c;
+    border-radius: 2px;
+    color: #ffffff;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.control-group select:focus {
+    outline: none;
+    border-color: #007acc;
+}
+
+.button-group {
+    display: flex;
+    gap: 8px;
+}
+
+/* Buttons */
+.btn {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 2px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    font-family: inherit;
+}
+
+.btn-run {
+    background-color: #388a34;
+    color: #ffffff;
+}
+
+.btn-run:hover {
+    background-color: #4db149;
+}
+
+.btn-clear {
+    background-color: #3c3c3c;
+    color: #cccccc;
+}
+
+.btn-clear:hover {
+    background-color: #4c4c4c;
+}
+
+.btn-convert {
+    background-color: #0451a5;
+    color: #ffffff;
+}
+
+.btn-convert:hover {
+    background-color: #0066cc;
+}
+
+/* Section Title */
+.section-title {
+    background-color: #252526;
+    padding: 6px 15px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #bbbbbb;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #3c3c3c;
+}
+
+/* Editor Section */
+.editor-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 160px;
+}
+
+.editor-section .CodeMirror {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Input Section */
+.input-section {
+    border-top: 1px solid #3c3c3c;
+    flex: 0 0 auto;
+}
+
+.input-section textarea {
+    width: 100%;
+    height: 70px;
+    padding: 10px 15px;
+    background-color: #1e1e1e;
+    border: none;
+    color: #d4d4d4;
+    font-family: 'Consolas', monospace;
+    font-size: 14px;
+    resize: none;
+}
+
+.input-section textarea:focus {
+    outline: none;
+}
+
+.input-section textarea::placeholder {
+    color: #6a6a6a;
+}
+
+/* Convert Section */
+.convert-section {
+    background-color: #252526;
+    padding: 8px 15px;
+    border-top: 1px solid #3c3c3c;
+}
+
+.convert-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.convert-controls label {
+    font-size: 13px;
+    color: #cccccc;
+}
+
+.convert-controls select {
+    padding: 5px 10px;
+    background-color: #3c3c3c;
+    border: 1px solid #3c3c3c;
+    border-radius: 2px;
+    color: #ffffff;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Output Section */
+.output-section {
+    border-top: 1px solid #3c3c3c;
+    flex: 1;
+    min-height: 100px;
+    overflow-y: auto;
+}
+
+.output-section pre {
+    padding: 12px 15px;
+    font-family: 'Consolas', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #1e1e1e;
+    min-height: 80px;
+    color: #d4d4d4;
+}
+
+.output-success {
+    color: #4ec9b0 !important;
+}
+
+.output-error {
+    color: #f14c4c !important;
+}
+
+/* Right Panel */
+.right-panel {
+    min-width: 320px;
+    width: 40%;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.right-panel .CodeMirror {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.right-editor-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 160px;
+}
+
+.left-bottom-section {
+    flex: 0 0 260px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-resizer {
+    background-color: #252526;
+    transition: background-color 0.12s;
+}
+
+.panel-resizer:hover,
+.horizontal-resizer:hover {
+    background-color: #007acc;
+}
+
+.vertical-resizer {
+    width: 6px;
+    flex: 0 0 6px;
+    cursor: col-resize;
+    border-left: 1px solid #3c3c3c;
+    border-right: 1px solid #3c3c3c;
+    touch-action: none;
+}
+
+.horizontal-resizer {
+    height: 6px;
+    flex: 0 0 6px;
+    cursor: row-resize;
+    background-color: #252526;
+    border-top: 1px solid #3c3c3c;
+    border-bottom: 1px solid #3c3c3c;
+    touch-action: none;
+}
+
+body.is-resizing,
+body.is-resizing * {
+    user-select: none !important;
+}
+
+body.is-resizing-vertical {
+    cursor: col-resize !important;
+}
+
+body.is-resizing-horizontal {
+    cursor: row-resize !important;
+}
+
+.right-panel .controls-bar {
+    background-color: #252526;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #3c3c3c;
+}
+
+.right-panel .control-group label {
+    font-size: 13px;
+    color: #cccccc;
+}
+
+.right-panel .control-group span {
+    font-size: 13px;
+    color: #569cd6;
+    font-weight: 500;
+}
+
+.right-panel .section-title {
+    background-color: #252526;
+    padding: 6px 15px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #bbbbbb;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #3c3c3c;
+}
+
+/* ================================================================
+   VS CODE SYNTAX HIGHLIGHTING - CodeMirror Theme
+   ================================================================ */
+
+.CodeMirror {
+    background-color: #1e1e1e !important;
+    color: #d4d4d4 !important;
+    height: 100%;
+}
+
+.CodeMirror-gutters {
+    background-color: #1e1e1e !important;
+    border-right: 1px solid #3c3c3c !important;
+}
+
+.CodeMirror-linenumber {
+    color: #858585 !important;
+}
+
+.CodeMirror-cursor {
+    border-left-color: #aeafad !important;
+}
+
+.CodeMirror-selected {
+    background-color: #264f78 !important;
+}
+
+.CodeMirror-focused .CodeMirror-selected {
+    background-color: #264f78 !important;
+}
+
+/* VS Code Keyword Colors */
+.cm-keyword {
+    color: #569cd6 !important;          /* Blue: if, else, for, while, def, class, import, from, return */
+}
+
+.cm-variable {
+    color: #9cdcfe !important;          /* Light Blue: variable names */
+}
+
+.cm-variable-2 {
+    color: #9cdcfe !important;          /* Light Blue */
+}
+
+.cm-variable-3 {
+    color: #9cdcfe !important;
+}
+
+.cm-def {
+    color: #dcdcaa !important;          /* Yellow: function names */
+}
+
+.cm-property {
+    color: #9cdcfe !important;          /* Light Blue: object properties */
+}
+
+.cm-operator {
+    color: #d4d4d4 !important;          /* White: =, +, -, *, / */
+}
+
+.cm-atom {
+    color: #569cd6 !important;          /* Blue: true, false, None, null */
+}
+
+.cm-number {
+    color: #b5cea8 !important;          /* Light Green: numbers */
+}
+
+.cm-string {
+    color: #ce9178 !important;          /* Orange: strings */
+}
+
+.cm-string-2 {
+    color: #ce9178 !important;
+}
+
+.cm-comment {
+    color: #6a9955 !important;          /* Green: comments */
+}
+
+.cm-tag {
+    color: #569cd6 !important;          /* Blue: HTML tags */
+}
+
+.cm-attribute {
+    color: #9cdcfe !important;          /* Light Blue: attributes */
+}
+
+.cm-meta {
+    color: #808080 !important;          /* Gray: meta info */
+}
+
+.cm-builtin {
+    color: #4ec9b0 !important;          /* Teal: built-in functions */
+}
+
+.cm-header {
+    color: #569cd6 !important;
+}
+
+.cm-link {
+    color: #569cd6 !important;
+}
+
+.cm-error {
+    color: #f14c4c !important;          /* Red: errors */
+}
+
+.cm-qualifier {
+    color: #d7ba7d !important;
+}
+
+.cm-property-2 {
+    color: #9cdcfe !important;
+}
+
+/* Python specific */
+.cm-m-python.cm-variable {
+    color: #9cdcfe !important;
+}
+
+.cm-m-python.cm-keyword {
+    color: #569cd6 !important;
+}
+
+.cm-m-python.cm-def {
+    color: #dcdcaa !important;
+}
+
+.cm-m-python.cm-string {
+    color: #ce9178 !important;
+}
+
+.cm-m-python.cm-number {
+    color: #b5cea8 !important;
+}
+
+.cm-m-python.cm-comment {
+    color: #6a9955 !important;
+}
+
+.cm-m-python.cm-builtin {
+    color: #4ec9b0 !important;
+}
+
+.cm-m-python.cm-atom {
+    color: #569cd6 !important;
+}
+
+/* JavaScript specific */
+.cm-m-javascript.cm-keyword {
+    color: #569cd6 !important;
+}
+
+.cm-m-javascript.cm-variable {
+    color: #9cdcfe !important;
+}
+
+.cm-m-javascript.cm-def {
+    color: #dcdcaa !important;
+}
+
+.cm-m-javascript.cm-string {
+    color: #ce9178 !important;
+}
+
+.cm-m-javascript.cm-number {
+    color: #b5cea8 !important;
+}
+
+.cm-m-javascript.cm-comment {
+    color: #6a9955 !important;
+}
+
+.cm-m-javascript.cm-property {
+    color: #9cdcfe !important;
+}
+
+.cm-m-javascript.cm-atom {
+    color: #569cd6 !important;
+}
+
+/* C/C++/Java specific */
+.cm-m-clike.cm-keyword {
+    color: #569cd6 !important;
+}
+
+.cm-m-clike.cm-variable {
+    color: #9cdcfe !important;
+}
+
+.cm-m-clike.cm-def {
+    color: #dcdcaa !important;
+}
+
+.cm-m-clike.cm-string {
+    color: #ce9178 !important;
+}
+
+.cm-m-clike.cm-number {
+    color: #b5cea8 !important;
+}
+
+.cm-m-clike.cm-comment {
+    color: #6a9955 !important;
+}
+
+.cm-m-clike.cm-type {
+    color: #4ec9b0 !important;          /* Teal: int, float, string, void */
+}
+
+/* Ruby specific */
+.cm-m-ruby.cm-keyword {
+    color: #569cd6 !important;
+}
+
+.cm-m-ruby.cm-variable {
+    color: #9cdcfe !important;
+}
+
+.cm-m-ruby.cm-def {
+    color: #dcdcaa !important;
+}
+
+.cm-m-ruby.cm-string {
+    color: #ce9178 !important;
+}
+
+.cm-m-ruby.cm-number {
+    color: #b5cea8 !important;
+}
+
+.cm-m-ruby.cm-comment {
+    color: #6a9955 !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #424242;
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4f4f4f;
+}
+
+/* Selection */
+::selection {
+    background-color: #264f78;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .left-panel {
+        width: 100%;
+        min-width: 0;
+        flex: 1;
+        border-right: none;
+        border-bottom: 1px solid #3c3c3c;
+    }
+    
+    .right-panel {
+        width: 100%;
+        min-width: 0;
+        flex: 1;
+        min-height: 300px;
+    }
+
+    .vertical-resizer {
+        display: none;
+    }
+}

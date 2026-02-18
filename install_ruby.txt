@@ -1,0 +1,191 @@
+================================================================================
+                    HOW TO INSTALL RUBY ON WINDOWS
+                    Step-by-Step Terminal Instructions
+================================================================================
+
+This guide will help you install Ruby on Windows using the terminal.
+
+================================================================================
+METHOD 1: USING POWERSHELL TO DOWNLOAD AND INSTALL RUBY
+================================================================================
+
+STEP 1: Open PowerShell as Administrator
+-----------------------------------------
+1. Press Windows Key + X
+2. Select "Windows PowerShell (Admin)" or "Terminal (Admin)"
+3. Click "Yes" if prompted for permission
+
+STEP 2: Create a temporary download directory
+---------------------------------------------
+Run this command in PowerShell:
+
+    New-Item -ItemType Directory -Force -Path "C:\temp\ruby"
+    cd C:\temp\ruby
+
+STEP 3: Download Ruby Installer
+-------------------------------
+Run this command to download Ruby installer (version 3.2.2):
+
+    Invoke-WebRequest -Uri "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-3.2.2-1/rubyinstaller-3.2.2-1-x64.exe" -OutFile "rubyinstaller.exe"
+
+This will download the Ruby installer executable.
+
+STEP 4: Run the Ruby Installer
+------------------------------
+Run the installer:
+
+    Start-Process -FilePath "rubyinstaller.exe" -ArgumentList "/verysilent /dir=C:\Ruby32 /tasks=assocfiles,modpath" -Wait
+
+This will:
+- Install Ruby silently (no UI prompts)
+- Install to C:\Ruby32
+- Associate .rb files with Ruby
+- Add Ruby to your PATH
+
+STEP 5: Verify Installation
+---------------------------
+Close the current PowerShell window and open a new one, then run:
+
+    ruby --version
+
+You should see output like: ruby 3.2.2 (2023-03-30 revision e51014f9c0) [x64-mingw-ucrt]
+
+STEP 6: Clean Up
+----------------
+Remove the temporary files:
+
+    Remove-Item -Path "C:\temp\ruby" -Recurse -Force
+
+================================================================================
+METHOD 2: MANUAL DOWNLOAD AND INSTALL (IF METHOD 1 FAILS)
+================================================================================
+
+STEP 1: Download Ruby Installer manually
+----------------------------------------
+1. Open your web browser
+2. Go to: https://rubyinstaller.org/downloads/
+3. Under "RubyInstaller-3.2.x", click on "Ruby 3.2.2-1 (x64)"
+4. Save the file (approximately 140 MB)
+
+STEP 2: Run the Installer
+-------------------------
+1. Navigate to your Downloads folder
+2. Double-click "rubyinstaller-3.2.2-1-x64.exe"
+3. Select your language and click OK
+4. Accept the license agreement
+5. IMPORTANT: Check these boxes:
+   [✓] Add Ruby executables to your PATH
+   [✓] Associate .rb and .rbw files with this Ruby installation
+6. Click Install
+7. Wait for installation to complete
+
+STEP 3: Run the MSYS2 Development Kit
+--------------------------------------
+After Ruby installs, a command window will appear asking about MSYS2:
+1. Press Enter to run the recommended setup
+2. Wait for the installation to complete
+3. Press Enter again when finished
+
+STEP 4: Verify Installation
+---------------------------
+Open Command Prompt and run:
+
+    ruby --version
+
+================================================================================
+METHOD 3: USING CHOCOLATEY (IF INSTALLED)
+================================================================================
+
+If you have Chocolatey package manager installed:
+
+STEP 1: Open PowerShell as Administrator
+
+STEP 2: Install Ruby using Chocolatey
+--------------------------------------
+Run:
+
+    choco install ruby -y
+
+STEP 3: Verify Installation
+---------------------------
+Close and reopen PowerShell, then run:
+
+    ruby --version
+
+================================================================================
+VERIFY RUBY IS WORKING WITH CODEBRIDGE
+================================================================================
+
+After installing Ruby, test it with CodeBridge:
+
+1. Make sure the backend server is running (on port 5000)
+
+2. Open http://localhost:8080 in your browser
+
+3. Select "Ruby" from the language dropdown
+
+4. Paste this test code:
+
+    puts "Hello from Ruby!"
+    puts "2 + 2 = #{2 + 2}"
+
+5. Click "Run Code"
+
+6. Expected output:
+
+    Hello from Ruby!
+    2 + 2 = 4
+
+================================================================================
+TROUBLESHOOTING RUBY INSTALLATION
+================================================================================
+
+Problem: "ruby is not recognized as an internal or external command"
+
+Solution 1: Restart your terminal/command prompt after installation
+
+Solution 2: Add Ruby to PATH manually
+   1. Press Windows + R, type "sysdm.cpl" and press Enter
+   2. Go to Advanced tab → Environment Variables
+   3. Under "System variables", find "Path" and click Edit
+   4. Click "New" and add: C:\Ruby32\bin
+   5. Click OK on all dialogs
+   6. Restart your terminal
+
+Problem: SSL certificate errors when using gem
+
+Solution: Run this command in PowerShell:
+   
+    gem install rubygems-update
+    update_rubygems
+
+Problem: Installation fails due to antivirus
+
+Solution: Temporarily disable your antivirus during installation
+
+================================================================================
+QUICK COMMANDS SUMMARY (COPY AND PASTE)
+================================================================================
+
+Open PowerShell as Administrator and run these commands one by one:
+
+    # Create temp directory
+    New-Item -ItemType Directory -Force -Path "C:\temp\ruby"
+    cd C:\temp\ruby
+    
+    # Download Ruby installer
+    Invoke-WebRequest -Uri "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-3.2.2-1/rubyinstaller-3.2.2-1-x64.exe" -OutFile "rubyinstaller.exe"
+    
+    # Install Ruby (silent mode)
+    Start-Process -FilePath "rubyinstaller.exe" -ArgumentList "/verysilent /dir=C:\Ruby32 /tasks=assocfiles,modpath" -Wait
+    
+    # Clean up
+    cd \
+    Remove-Item -Path "C:\temp\ruby" -Recurse -Force
+
+    # Verify (close and reopen PowerShell first!)
+    ruby --version
+
+================================================================================
+                           RUBY INSTALLATION COMPLETE!
+================================================================================

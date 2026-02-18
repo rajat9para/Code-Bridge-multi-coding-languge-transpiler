@@ -1,0 +1,69 @@
+﻿# -----------------------------
+# OS / Editor
+# -----------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+
+# -----------------------------
+# Node / JS
+# -----------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# -----------------------------
+# Build / Binaries
+# -----------------------------
+*.exe
+*.dll
+*.so
+*.dylib
+*.o
+*.obj
+*.a
+*.lib
+*.class
+
+# -----------------------------
+# Logs / Temp
+# -----------------------------
+*.log
+*.tmp
+*.temp
+
+# -----------------------------
+# Project generated runtime files
+# -----------------------------
+backend/temp/
+backend/temp_test/
+backend/temp_scan/
+backend/temp_scan2/
+backend/.scan_tmp/
+backend/.scan_tmp2/
+backend/.robust_scan/
+backend/.verify_tmp/
+
+# Optional local notes
+*.local

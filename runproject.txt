@@ -1,0 +1,270 @@
+================================================================================
+                    CODEBRIDGE - HOW TO RUN THE PROJECT
+                    Multi-Backend Compiler Framework
+================================================================================
+
+This guide will walk you through running the CodeBridge project step by step.
+
+================================================================================
+STEP 1: PREREQUISITES - INSTALL REQUIRED SOFTWARE
+================================================================================
+
+Before running the project, make sure you have the following installed:
+
+1. Python 3.8 or higher
+   - Download from: https://www.python.org/downloads/
+   - During installation, check "Add Python to PATH"
+   - Verify installation: Open Command Prompt and type:
+     python --version
+
+2. Node.js (Required for JavaScript execution)
+   - Download from: https://nodejs.org/
+   - Choose the LTS version
+   - Verify installation: Open Command Prompt and type:
+     node --version
+
+3. Java JDK (Required for Java compilation - Optional)
+   - Download from: https://adoptium.net/
+   - Install and set JAVA_HOME environment variable
+   - Verify installation:
+     java --version
+
+4. G++ Compiler (Required for C++ - Optional)
+   - Install MinGW from: https://www.mingw-w64.org/
+   - Add to PATH environment variable
+   - Verify installation:
+     g++ --version
+
+5. Ruby (Required for Ruby execution - Optional)
+   - Download from: https://www.ruby-lang.org/
+   - Verify installation:
+     ruby --version
+
+================================================================================
+STEP 2: NAVIGATE TO PROJECT DIRECTORY
+================================================================================
+
+1. Open Command Prompt (Press Windows + R, type "cmd", press Enter)
+
+2. Navigate to the project folder:
+   cd c:\Users\ASUS\OneDrive\Desktop\code_bridge
+
+================================================================================
+STEP 3: INSTALL PYTHON DEPENDENCIES
+================================================================================
+
+1. Navigate to backend folder:
+   cd backend
+
+2. Install required Python packages:
+   pip install -r requirements.txt
+
+   This will install:
+   - Flask (Web framework)
+   - Flask-CORS (Cross-origin support)
+   - python-dotenv (Environment variables)
+
+3. Go back to main project folder:
+   cd ..
+
+================================================================================
+STEP 4: START THE BACKEND SERVER
+================================================================================
+
+1. Open a NEW Command Prompt window (keep this window open)
+
+2. Navigate to backend folder:
+   cd c:\Users\ASUS\OneDrive\Desktop\code_bridge\backend
+
+3. Start the Flask server:
+   python app.py
+
+4. You should see output like:
+   ==================================================
+   CodeBridge - Multi-Backend Compiler Framework
+   =================================================
+   Server running on http://localhost:5000
+   Supported languages: ['python', 'java', 'cpp', 'javascript', 'ruby']
+   =================================================
+   * Serving Flask app 'app'
+   * Running on http://127.0.0.1:5000
+
+5. Keep this window OPEN - the server must stay running!
+
+================================================================================
+STEP 5: START THE FRONTEND SERVER
+================================================================================
+
+1. Open ANOTHER NEW Command Prompt window
+
+2. Navigate to frontend folder:
+   cd c:\Users\ASUS\OneDrive\Desktop\code_bridge\frontend
+
+3. Start a simple HTTP server:
+   python -m http.server 8080
+
+4. You should see:
+   Serving HTTP on :: port 8080 (http://[::]:8080/) ...
+
+5. Keep this window OPEN as well!
+
+================================================================================
+STEP 6: OPEN THE APPLICATION IN BROWSER
+================================================================================
+
+1. Open your web browser (Chrome, Firefox, Edge, etc.)
+
+2. Go to one of these URLs:
+   - http://localhost:8080
+   OR
+   - http://127.0.0.1:8080
+
+3. You should see the CodeBridge interface with:
+   - A dark themed code editor
+   - Language selection dropdown
+   - "Run Code" button
+   - Output panel
+
+================================================================================
+STEP 7: HOW TO EXECUTE CODE
+================================================================================
+
+1. Select your programming language from the dropdown:
+   - Python
+   - JavaScript
+   - Java
+   - C++
+   - Ruby
+
+2. Write your code in the editor OR click "Load Template" to load a sample
+
+3. If your program needs input:
+   - Type the input in the "Input (stdin)" text area
+   
+4. Click "Run Code" button OR press Ctrl+Enter
+
+5. View the output in the Output panel below
+
+EXAMPLE - Python Code:
+-----------------------
+print("Hello, World!")
+
+Click "Run Code" and you'll see:
+Hello, World!
+
+EXAMPLE - Python with Input:
+----------------------------
+name = input("Enter name: ")
+print(f"Hello, {name}!")
+
+Input (stdin): John
+
+Output:
+Hello, John!
+
+================================================================================
+STEP 8: HOW TO CONVERT CODE BETWEEN LANGUAGES
+================================================================================
+
+1. Click on "Convert Code" tab at the top
+
+2. Select source language (left dropdown)
+
+3. Select target language (right dropdown)
+
+4. Write or paste your source code in the left editor
+
+5. Click the convert button (arrow icon in the middle)
+
+6. The converted code will appear in the right editor
+
+7. Read the conversion notes at the bottom for important information
+
+================================================================================
+STEP 9: TESTING THE APPLICATION
+================================================================================
+
+TEST 1 - Python Execution:
+---------------------------
+1. Select "Python" from language dropdown
+2. Click "Load Template"
+3. Enter a name in the stdin field: "TestUser"
+4. Click "Run Code"
+5. Expected Output: "Hello, TestUser!"
+
+TEST 2 - JavaScript Execution:
+------------------------------
+1. Select "JavaScript" from language dropdown
+2. Click "Load Template"
+3. Click "Run Code"
+4. Expected Output: The program will prompt for input
+
+TEST 3 - Code Conversion:
+-------------------------
+1. Go to "Convert Code" tab
+2. Source: Python, Target: JavaScript
+3. Paste Python code:
+   def greet(name):
+       return f"Hello, {name}!"
+4. Click convert button
+5. View converted JavaScript code
+
+================================================================================
+STEP 10: STOPPING THE SERVERS
+================================================================================
+
+To stop the servers:
+
+1. Go to each Command Prompt window running a server
+
+2. Press Ctrl+C to stop the server
+
+3. Close the Command Prompt windows
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+Problem: "Backend not connected" in footer
+Solution: Make sure the backend server is running on port 5000
+
+Problem: Code execution shows error
+Solution: 
+- Check if the language compiler/interpreter is installed
+- Verify the code has no syntax errors
+- Check the output for specific error messages
+
+Problem: "Port 5000 already in use"
+Solution: 
+- Close any other application using port 5000
+- Or change the port in app.py (last line)
+
+Problem: CORS errors in browser console
+Solution: Make sure Flask-CORS is installed and the backend is running
+
+Problem: Python not recognized
+Solution: 
+- Make sure Python is added to PATH
+- Restart Command Prompt after installing Python
+
+================================================================================
+QUICK START SUMMARY
+================================================================================
+
+1. Open Command Prompt 1:
+   cd c:\Users\ASUS\OneDrive\Desktop\code_bridge\backend
+   pip install -r requirements.txt
+   python app.py
+
+2. Open Command Prompt 2:
+   cd c:\Users\ASUS\OneDrive\Desktop\code_bridge\frontend
+   python -m http.server 8080
+
+3. Open Browser:
+   http://localhost:8080
+
+4. Select language, write code, click "Run Code"
+
+================================================================================
+                            HAPPY CODING!
+================================================================================
